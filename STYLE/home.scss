@@ -1,0 +1,178 @@
+:root{
+    --homepage-backgorundColor: #72cccc;
+    --primary-color: #f5ffff;
+    --secondary-color: #132121;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+
+    width: 100%;
+    background-color: var(--homepage-backgorundColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+        nav{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100px;
+            background-color: var(--homepage-backgorundColor);
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        
+            h1{
+                position: absolute;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 3rem;
+                left: 100px;
+                color: white;
+            }
+            a{  
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 1.5rem;
+                color: white;
+                text-decoration: none;
+                text-transform: uppercase;
+                padding-left: 50px;
+                position: relative;
+                left: 200px;
+            }
+        }
+        #main-display{
+            width: 100%;
+            height: 35vw;
+            background-image: url('/FILES/maindisplaybg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: contrast(0.5);
+            margin-top: 100px;
+
+        }
+        #socialmedia-links{
+            width: 100%;
+            height: 10vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            i{
+                cursor: pointer;
+                font-size: 3rem;
+                color: white;
+                transition: 0.5s;
+
+                :hover{
+                    transform: scale(1.5);
+                }
+            }
+        }
+
+        #product-category{
+            width: 100%;
+            height: 200px;
+            margin-bottom: 50px;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+
+            ::before{
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 100%;
+                background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--homepage-backgorundColor));
+                z-index: 1;
+            }
+            ::after{
+                position: absolute;
+                content: '';
+                top: 0;
+                right: 0;
+                width: 100px;
+                height: 100%;
+                background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--homepage-backgorundColor));
+                z-index: 1;
+            }
+
+            .brandlogo{
+                display: inline-block;
+                animation: 30s slide infinite linear;
+            }
+            
+            img{
+                width: 300px;
+                height: 200px;
+            }
+            @keyframes slide {
+                from{
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(-100%);
+                }
+            }
+
+            :hover .brandlogo{
+                animation-play-state: paused;
+            }
+        }
+
+        #lastest-category{
+            width: 90%;
+            height: 30vw;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: auto;
+            gap: 20px;
+
+
+            .box{
+                background-color: var(--primary-color);
+                min-width: 300px;
+                height: 400px;
+                border-radius: 10px;
+                box-shadow: 2px 2px 3px 3px rgba(0,0,0, 0.2);
+                text-align: center;
+                align-content: center;
+                gap: 20px;
+                transition: 0.5s;
+
+                :hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        #footer{
+            width: 100%;
+            height: 30vw;
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 40px;
+
+            h2{
+                color: var(--primary-color);
+                font-size: 1rem;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+        }
+}
+
